@@ -1,5 +1,5 @@
-Overview
-The Contoso PetFriends app is a simple console application designed to manage information about pets available for adoption. It allows you to list, add, and edit pet information during runtime, but the data is not persisted after the program ends.
+
+##The Contoso PetFriends app is a simple console application designed to manage information about pets available for adoption. It allows you to list, add, and edit pet information during runtime, but the data is not persisted after the program ends.
 
 Features
 List all current pet information
