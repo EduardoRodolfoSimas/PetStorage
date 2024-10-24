@@ -177,7 +177,7 @@ while (menuSelection != "exit")
                 {
                     if (readResult == "?")
                     {
-                        animalAge = "unknown";
+                        animalAge = "?";
                         validEntry = true;
                     }
                     else if (int.TryParse(readResult, out petAge))
@@ -274,8 +274,35 @@ while (menuSelection != "exit")
             break;
 
         case "3":
-            // Ensure animal ages and physical descriptions are complete
-            Console.WriteLine("Challenge Project - please check back soon to see progress.");
+
+                for (int i = 0; i < maxPets; i++)
+                {
+                        if (ourAnimals[i, 0] != "ID #: ")
+                        {
+                            for (int j = 0; j < 6; j++)
+                            {
+                                if (ourAnimals[i, 2] == "Age: ?")
+                                {
+                                    Console.WriteLine($"Enter an age for {ourAnimals[i, 0]}");
+                                    readResult = Console.ReadLine();
+                                    if (readResult != null)
+                                    {
+                                        ourAnimals[i, 2] = "Age: " + readResult;
+                                    }
+                                }
+                                if (ourAnimals[i, 4] == "Physical description: ")
+                                {
+                                    Console.WriteLine($"Enter a physical description for {ourAnimals[i, 0]} (size, color, gender, weight, housebroken)");
+                                    readResult = Console.ReadLine();
+                                    if (readResult != null)
+                                    {
+                                        ourAnimals[i, 4] = "Physical description: " + readResult;
+                                    }
+                                }
+                            }
+                        }
+                }
+            Console.WriteLine("Age and physical description fields are complete for all of our friends.");
             break;
 
         case "4":
