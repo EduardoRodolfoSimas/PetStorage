@@ -306,7 +306,33 @@ while (menuSelection != "exit")
             break;
 
         case "4":
-            Console.WriteLine("Challenge Project - please check back soon to see progress.");
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] != "ID #: ")
+                {
+                    for (int j = 0; j < 6; j++)
+                    {
+                        if (ourAnimals[i, 3] == "Nickname: ")
+                        {
+                            Console.WriteLine($"Enter a nickname for {ourAnimals[i, 0]}");
+                            readResult = Console.ReadLine();
+                            if (readResult != null)
+                            {
+                                ourAnimals[i, 3] = "Nickname: " + readResult;
+                            }
+                        }
+                        if (ourAnimals[i, 5] == "Personality: ")
+                        {
+                            Console.WriteLine($"Enter a personality description for {ourAnimals[i, 0]}");
+                            readResult = Console.ReadLine();
+                            if (readResult != null)
+                            {
+                                ourAnimals[i, 5] = "Personality: " + readResult;
+                            }
+                        }
+                    }
+                }
+            }
             break;
 
         case "5":
